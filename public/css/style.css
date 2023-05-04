@@ -305,3 +305,9 @@ ion-icon {
   color: black;
 }
 
+button {
+  border: none;
+  background-color: transparent;
+
+}
+

@@ -35,7 +35,7 @@ export default function Stories() {
   ];
 
   return (
-    <div class="corpo">
+   
       <div class="esquerda">
         <div class="stories">
           {Storys.map((story) => (
@@ -49,6 +49,5 @@ export default function Stories() {
           </div>
         </div>
       </div>
-    </div>
   );
 }
