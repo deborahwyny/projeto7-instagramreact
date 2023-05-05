@@ -1,3 +1,5 @@
+import Story from "./Story";
+
 export default function Stories() {
   const Storys = [
     {
@@ -6,11 +8,11 @@ export default function Stories() {
     },
     {
       img: "./assets/meowed.svg",
-      usario: "meowed",
+      usuario: "meowed",
     },
     {
       img: "./assets/barked.svg",
-      usario: "barked",
+      usuario: "barked",
     },
     {
       img: "./assets/nathanwpylestrangeplanet.svg",
@@ -36,18 +38,15 @@ export default function Stories() {
 
   return (
    
-      <div class="esquerda">
+      
         <div class="stories">
-          {Storys.map((story) => (
-            <div class="story">
-              <img class="imagem" src={story.img} alt={story.usuario} />
-              <div class="usuario">{story.usuario}</div>
-            </div>
+          {Storys.map((item) => (
+            < Story story = {item}/>
           ))}
           <div class="setinha">
             <ion-icon name="chevron-forward-circle"></ion-icon>
           </div>
         </div>
-      </div>
+     
   );
 }

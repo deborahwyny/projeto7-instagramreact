@@ -5,7 +5,7 @@ export default function SideBar() {
     return (
    
         <div class="sidebar">
-            <User imagem = "./assets/catanacomics.svg" username = "catanacomics"/>
+            <User />
             <Suggestions />
 
 
@@ -13,3 +13,6 @@ export default function SideBar() {
     
     )
 }
+
+
+// imagem = "./assets/catanacomics.svg"

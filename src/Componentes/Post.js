@@ -1,58 +1,90 @@
-import Posts from "./Posts";
+import Curtidas from "./Curtidas";
+import { useState } from "react";
 
-const postagens = [
-  {
-    foto: "./assets/meowed.svg",
-    userName: "meowed",
-    conteudo: "./assets/dog.svg",
-    curtidas: "./assets/adorable_animals.svg",
-  },
-  {
-    foto: "./assets/barked.svg",
-    userName: "barked",
-    conteudo: "./assets/gato-telefone.svg",
-    curtidas: "./assets/respondeai.svg",
-  },
-];
 
-export default function Post(props) {
-  return (
-    <div className="corpo">
-      {postagens.map((poste) => (
-        <div className="post">
-          <div className="topo">
-            <div className="usuario">
+export default function Post ({poste}){
+
+
+  const  numeroCurtidas = 101523
+
+  const hearts = [<ion-icon data-test="like-post" onClick={like} name="heart-outline"></ion-icon>, <ion-icon class="heart-red" onClick={dislike} name="heart"></ion-icon>]
+  const salvo = [<ion-icon data-test="save-post" onClick={save} name="bookmark-outline"></ion-icon>, <ion-icon onClick={unsave} name="bookmark"></ion-icon>]
+
+
+  let [curtida, setCurtida] = useState(numeroCurtidas) 
+  let [heart, setHeart] = useState(hearts[0]) 
+  let [salvando, setSalvando] = useState(salvo[0])
+  
+  function like(){
+    setCurtida(curtida++)
+    setHeart(hearts[1])
+  }
+
+  function dislike(){
+    setCurtida(curtida--)
+    setHeart(hearts[0])
+
+  }
+
+  let curtiu = false
+
+  function curtidaFoto(){
+    setCurtida(curtida++)
+    setHeart(hearts[1])
+    curtiu = true
+    console.log(curtiu)
+
+  }
+
+
+
+
+
+function save(){
+  setSalvando(salvo[1]);
+}
+
+function unsave(){
+  setSalvando(salvo[0]);
+}
+
+
+
+
+
+    return (
+        
+        <div data-test="post" class="post">
+          <div class="topo">
+            <div class="usuario">
               <img src={poste.foto} alt="meowed" />
               {poste.userName}
             </div>
-            <div className="acoes">
+            <div class="acoes">
               <ion-icon name="ellipsis-horizontal"></ion-icon>
             </div>
           </div>
-          <div className="conteudo">
-            <img src={poste.conteudo} alt="gato-telefone" />
+          <div class="conteudo">
+            <img data-test="post-image" onClick={curtidaFoto} src={poste.conteudo} alt="gato-telefone" />
           </div>
-          <div className="fundo">
-            <div className="acoes">
+          <div class="fundo">
+            <div class="acoes">
               <div>
-                <ion-icon name="heart-outline"></ion-icon>
+                {heart}
                 <ion-icon name="chatbubble-outline"></ion-icon>
                 <ion-icon name="paper-plane-outline"></ion-icon>
               </div>
+
               <div>
-                <ion-icon name="bookmark-outline"></ion-icon>
+              {salvando}
+
               </div>
             </div>
-            <div className="curtidas">
-              <img src={poste.curtidas} alt="respondeai" />
-              <div className="texto">
-                Curtido por <strong>respondeai</strong> e{" "}
-                <strong>outras 101.523 pessoas</strong>
-              </div>
-            </div>
+
+           <Curtidas img = {poste.curtidas} likes={curtida} /> 
+
           </div>
         </div>
-      ))}
-    </div>
-  );
+      
+    )
 }

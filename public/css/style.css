@@ -77,10 +77,14 @@ body {
 .corpo {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   width: 935px;
   margin: 0 auto;
   margin-top: 88px;
 }
+
+
+
 
 .esquerda {
   width: 100%;
@@ -198,11 +202,20 @@ body {
   font-weight: 300;
 }
 
-.post .fundo .curtidas img {
+.post .fundo .curtidas img  {
   width: 20px;
   height: 20px;
   margin-right: 10px;
 }
+
+
+.heart-red {
+  color: red;
+}
+.none {
+  display: none;
+}
+
 
 .post:last-child {
   margin-bottom: 18px;
