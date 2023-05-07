@@ -17,7 +17,7 @@ const postagens = [
     foto: "https://t.ctcdn.com.br/6YVfrGCmglehpUg4maUyL93yclI=/400x400/smart/filters:format(webp)/i489931.jpeg",
     userName: "Netflix",
     conteudo: "https://cinema10.com.br/upload/noticias/2019-2/802396b6e9.jpg",
-    curtidas: "https://akamai.sscdn.co/uploadfile/letras/fotos/0/4/a/e/04ae8fa7b1c5f93c543b4a876c091903.jpg"
+    curtidas: "https://akamai.sscdn.co/uploadfile/letras/fotos/0/4/a/e/04ae8fa7b1c5f93c543b4a876c091903.jpeg"
 
   }
 ];

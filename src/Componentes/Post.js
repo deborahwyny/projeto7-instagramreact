@@ -7,7 +7,7 @@ export default function Post ({poste}){
 
   const  numeroCurtidas = 101523
 
-  const hearts = [<ion-icon data-test="like-post" onClick={like} name="heart-outline"></ion-icon>, <ion-icon ata-test="like-post" class="heart-red" onClick={dislike} name="heart"></ion-icon>]
+  const hearts = [<ion-icon data-test="like-post" onClick={like} name="heart-outline"></ion-icon>, <ion-icon data-test="like-post" class="heart-red" onClick={dislike} name="heart"></ion-icon>]
   const salvo = [<ion-icon data-test="save-post" onClick={save} name="bookmark-outline"></ion-icon>, <ion-icon data-test="save-post" onClick={unsave} name="bookmark"></ion-icon>]
 
 
