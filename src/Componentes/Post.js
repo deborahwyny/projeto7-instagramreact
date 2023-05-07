@@ -16,12 +16,13 @@ export default function Post ({poste}){
   let [salvando, setSalvando] = useState(salvo[0])
   
   function like(){
-    setCurtida(curtida++)
+    setCurtida(++curtida)
     setHeart(hearts[1])
+    
   }
 
   function dislike(){
-    setCurtida(curtida--)
+    setCurtida(--curtida)
     setHeart(hearts[0])
 
   }
@@ -29,7 +30,7 @@ export default function Post ({poste}){
   let curtiu = false
 
   function curtidaFoto(){
-    setCurtida(curtida++)
+    setCurtida(++curtida)
     setHeart(hearts[1])
     curtiu = true
     console.log(curtiu)
